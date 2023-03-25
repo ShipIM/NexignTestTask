@@ -1,0 +1,13 @@
+Entities\Call.class
+Tariffs\Tariff.class
+Entities\Record.class
+Entities\Customer.class
+Tariffs\CommonTariff.class
+Entities\Call$Type.class
+ReadData\WrongFormatException.class
+Drawing\Display.class
+ReadData\FormatReader.class
+ReadData\TextReader.class
+Tariffs\UnlimitedTariff.class
+Application.class
+Tariffs\MinuteTariff.class
