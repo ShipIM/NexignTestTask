@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Implementation of the Format Reader interface, for reading text files
+ * Implementation of the FormatReader interface, for reading text files
  * of the format specified in the terms of reference
  */
 public class TextReader implements FormatReader {

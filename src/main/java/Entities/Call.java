@@ -79,7 +79,7 @@ public class Call implements Comparable<Call>, Display {
     }
 
     /**
-     * @return String representation of the call end time in the format: HH:mm:ss"
+     * @return String representation of the call end time in the format: "HH:mm:ss"
      */
     public String getStringifyDuration() {
         Duration duration = Duration.between(this.start, this.end);
