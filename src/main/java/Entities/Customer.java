@@ -80,9 +80,7 @@ public class Customer implements Display {
                 .append(String.format("|%-10s|%-21s|%-21s|%-10s|%-8s|\n",
                         "Call type", "      Start time", "       End time", " Duration", "  Cost"));
 
-        for (Call call : calls) {
-            builder.append(call.display()).append("\n");
-        }
+        calls.forEach(call -> builder.append(call.display()).append("\n"));
         builder.append(multiplier).append("\n");
 
         builder.append(String.format("|%52s: |%18s |\n", "Total Cost", cost + " rubles"));

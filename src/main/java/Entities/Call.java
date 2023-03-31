@@ -14,6 +14,10 @@ public class Call implements Comparable<Call>, Display {
      * String constant-template for formatting date and time
      */
     private final String STRING_PATTERN = "yyyy-MM-dd HH:mm:ss";
+    /**
+     * String constant -template for date and time parsing
+     */
+    private final String DATE_PATTERN = "yyyyMMddHHmmss";
 
     /**
      * Call start time
@@ -41,11 +45,23 @@ public class Call implements Comparable<Call>, Display {
      * @param end   String representation of the call end time in the format: "YYYYMMDDHH24MMSS"
      */
     public Call(String type, String start, String end) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
 
         this.start = LocalDateTime.parse(start, formatter);
         this.end = LocalDateTime.parse(end, formatter);
         this.type = Type.valueOf("T_" + type);
+    }
+
+    /**
+     * @param record An object of the Record class, which stores all the necessary
+     *               information about the call in a string representation
+     */
+    public Call(Record record) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
+
+        this.start = LocalDateTime.parse(record.getCallStart(), formatter);
+        this.end = LocalDateTime.parse(record.getCallEnd(), formatter);
+        this.type = Type.valueOf("T_" + record.getType());
     }
 
     /**

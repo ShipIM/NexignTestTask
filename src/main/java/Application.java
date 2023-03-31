@@ -55,7 +55,7 @@ public class Application {
                         customers.put(record.getNumber(), customer);
                     }
 
-                    Call call = new Call(record.getType(), record.getCallStart(), record.getCallEnd());
+                    Call call = new Call(record);
                     customers.get(record.getNumber()).addNumber(call);
                 }
             } catch (DateTimeParseException | IllegalArgumentException e) {
